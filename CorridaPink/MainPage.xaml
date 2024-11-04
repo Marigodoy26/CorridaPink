@@ -3,33 +3,72 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CorridaPink.MainPage">
 
-    <Grid>
-       <HorizontalStackLayout x:Name="HSLayer1">
-       <Image Source="fundo.png"/>
-       <Image Source="fundo.png"/>
-       <Image Source="fundo.png"/>
-       </HorizontalStackLayout>
+  <Grid>
+    <HorizontalStackLayout x:Name="HSLayer1">
+      <Image Source="fundo.png"
+             Margin="0"
+             VerticalOptions="End"
+             Aspect="Fill"/>
 
-         <HorizontalStackLayout x:Name="HSLayer2">
-       <Image Source="lua.png"/>
-       <Image Source="lua.png"/>
-       <Image Source="lua.png"/>
-       </HorizontalStackLayout>
+      <Image Source="fundo.png"
+             Margin="0"
+             VerticalOptions="End"
+             Aspect="Fill"/>
 
-         <HorizontalStackLayout x:Name="HSLayer3">
-       <Image Source="predios.png"/>
-       <Image Source="predios.png"/>
-       <Image Source="predios.png"/>
-       </HorizontalStackLayout>
+      <Image Source="fundo.png"
+             Margin="0"
+             VerticalOptions="End"
+             Aspect="Fill"/>
+    </HorizontalStackLayout>
 
-         <HorizontalStackLayout x:Name="HSLayer4">
-       <Image Source="chao.png"
-       Margin="0"
-       HeightRequest="120"
-       />
-       <Image Source="chao.png"/>
-       <Image Source="chao.png"/>
-       </HorizontalStackLayout>
-    </Grid>
+    <HorizontalStackLayout x:Name="HSLayer2">
+      <Image Source="lua.png"
+             Margin="0"
+             HeightRequest="250"
+             VerticalOptions="Start"
+             Aspect="Fill"/>
+
+      <Image Source="lua.png"
+              Margin="0"
+             HeightRequest="250"
+             VerticalOptions="Start"
+             Aspect="Fill"/>
+
+      <Image Source="lua.png"
+             Margin="0"
+             HeightRequest="10"
+             VerticalOptions="End"/>
+    </HorizontalStackLayout>
+
+    <HorizontalStackLayout x:Name="HSLayer3">
+      <Image Source="predios.png"
+             Margin="0"
+             HeightRequest="700"
+             VerticalOptions="End"/>
+      <Image Source="predios.png"
+             Margin="0"
+             HeightRequest="700"
+             VerticalOptions="End"/>
+      <Image Source="predios.png"
+             Margin="0"
+             HeightRequest="700"
+             VerticalOptions="End"/>
+    </HorizontalStackLayout>
+
+    <HorizontalStackLayout x:Name="HSLayerChao">
+      <Image Source="chao.png"
+             Margin="0"
+             HeightRequest="120"
+             VerticalOptions="End"/>
+      <Image Source="chao.png"
+             Margin="0"
+             HeightRequest="120"
+             VerticalOptions="End"/>
+      <Image Source="chao.png"
+      Margin="0"
+             HeightRequest="120"
+             VerticalOptions="End"/>
+    </HorizontalStackLayout>
+  </Grid>
 
 </ContentPage>
