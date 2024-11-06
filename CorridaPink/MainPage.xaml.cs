@@ -42,13 +42,13 @@ public partial class MainPage : ContentPage
 		(a as Image).WidthRequest=w;
 		foreach (var a in HSLayer3.Children)
 		(a as Image).WidthRequest=w;
-		foreach (var a in HorizontalStackLayoutLayerChao.Children)
+		foreach (var a in HSLayerChao.Children)
 		(a as Image).WidthRequest=w;
 
 		HSLayer1.WidthRequest=w*1.5;
 		HSLayer2.WidthRequest=w*1.5;
 		HSLayer3.WidthRequest=w*1.5;
-		HorizontalStackLayoutLayerChao.WidthRequest=w*1.5;
+		HSLayerChao.WidthRequest=w*1.5;
 	}
 
 	void GerenciaCenarios()
@@ -70,8 +70,32 @@ public partial class MainPage : ContentPage
 
 	void GerenciaCenario(HorizontalStackLayout HSL)
 	{
-		var view=(HorizontalStackLayout.Children.First()as Image);
+		var view=(HSL.Children.First()as Image);
 		if(view.WidthRequest+HSL.TranslationX<0)
+		{
+			HSL.Children.RemoveAt(view);
+			HSL.Children.Add(view);
+			HSL.TranslationX=view.TranslationX;
+		}		
+	}
+
+	async Task Desenha()
+	{
+		while(!EstaMorto)
+		{
+			GerenciaCenarios()
+			await Task.Delay(TempoEntreFrames);
+		}
+	}
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+		Desenha();
+    }
+
+	public class Animação
+	{
 		
 	}
 }
