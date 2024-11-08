@@ -96,7 +96,42 @@ public partial class MainPage : ContentPage
 
 	public class Animação
 	{
-		
+		protected List<String> animação1= new List<String>();
+		protected List<String> animação2= new List<String>();
+		protected List<String> animação3= new List<String>();
+
+		protected bool loop=true;
+		protected int AnimacaoAtiva=1;
+		protected Image compImage;
+		public Animação(Image a)
+		{
+			compImage=a;
+		}
+
+		public void Stop()
+		{
+			parado=true;
+		}
+		public void Play()
+		{
+			parado=false;
+		}
+		public void SetAnimaçãoAtiva(int a)
+		{
+			SetAnimacaoAtiva=a;
+		}
+	}
+
+	public void Desenha()
+	{
+		if(parado)
+		return;
+		String NomeArquivo="01";
+		int TamanhoAnimacao=0;
+		if(AnimacaoAtiva==1)
+		{
+			NomeArquivo=animacao1[Frameatual]
+		}
 	}
 }
 
