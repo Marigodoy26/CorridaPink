@@ -12,6 +12,9 @@ public partial class MainPage : ContentPage
 	int velocidade2 = 0;
 	int velocidade3 = 0;
 	int velocidade = 0;
+	const int ForcaGravidade=6;
+	bool EstanoChao=true;
+	bool EstanoAr=false;
 	Player player;
 
 
@@ -80,6 +83,12 @@ public partial class MainPage : ContentPage
 			HSL.Children.Add(view);
 			HSL.TranslationX = view.TranslationX;
 		}
+	}
+
+	void AplicaGravidade()
+	{
+		if(player.GetType()<0)
+		player.movey(ForcaGravidade);
 	}
 
 	async Task Desenha()

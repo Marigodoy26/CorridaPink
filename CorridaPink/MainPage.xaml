@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CorridaPink.MainPage"
-             xmlns:ff="clr-nameespace:FFImageLoading.Maui;assembly=FFImageLoading.maui">
+             xmlns:ff="clr-namespace:FFImageLoading.Maui;assembly=FFImageLoading.Maui">
 
   <Grid>
     <HorizontalStackLayout x:Name="HSLayer1">

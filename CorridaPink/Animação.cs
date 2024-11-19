@@ -1,7 +1,8 @@
 
 using FFImageLoading.Maui;
 
-public class Animação
+namespace CorridaPink;
+public partial class Animação
 {
     protected List<String> animacao1 = new List<String>();
     protected List<String> animacao2 = new List<String>();
@@ -12,7 +13,9 @@ public class Animação
     int FrameAtual=1;
     protected int AnimacaoAtiva = 1;
     protected CachedImageView compImage;
-    public Animacao(CachedImageView a)
+#pragma warning disable IDE0290 // Use primary constructor
+    public Animação(CachedImageView a)
+#pragma warning restore IDE0290 // Use primary constructor
     {
         compImage = a;
     }
@@ -34,7 +37,7 @@ public class Animação
     {
         if (parado)
             return;
-        String NomeArquivo = "";
+        String NomeArquivo = "menina01.png";
         int TamanhoAnimacao = 0;
         if (AnimacaoAtiva == 1)
         {
@@ -63,6 +66,11 @@ public class Animação
                 QuandoParar();
             }
         }
+    }
+
+    public virtual void QuandoParar()
+    {
+
     }
 }
 

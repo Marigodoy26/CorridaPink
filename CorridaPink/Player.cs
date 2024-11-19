@@ -1,7 +1,8 @@
 using FFImageLoading.Maui;
 
+namespace CorridaPink;
 public delegate void Callback();
-public class Player: Animacao
+public class Player: Animação
 {
     public Player(CachedImageView a):base(a)
     {
@@ -20,5 +21,6 @@ public class Player: Animacao
     {
         loop=true;
         SetAnimacaoAtiva(1);
+        Play();
     }
 }
