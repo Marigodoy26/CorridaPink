@@ -23,4 +23,17 @@ public class Player: Animação
         SetAnimacaoAtiva(1);
         Play();
     }
+
+    public void MoveY(int s)
+    {
+        CachedImageView.TranslationYProperty+=s;
+    }
+    public double GetY()
+    {
+        return CachedImageView.TranslationY;
+    }
+    public void SetY(double a )
+    {
+        CachedImageView.TranslationYProperty=a;
+    }
 }
