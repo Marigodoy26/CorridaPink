@@ -2,6 +2,7 @@ using FFImageLoading.Maui;
 
 namespace CorridaPink;
 public delegate void Callback();
+
 public class Player: Animação
 {
     public Player(CachedImageView a):base(a)
@@ -26,14 +27,14 @@ public class Player: Animação
 
     public void MoveY(int s)
     {
-        CachedImageView.TranslationYProperty+=s;
+        imageView.TranslationY+=s;
     }
     public double GetY()
     {
-        return CachedImageView.TranslationY;
+        return imageView.TranslationY;
     }
     public void SetY(double a )
     {
-        CachedImageView.TranslationYProperty=a;
+        imageView.TranslationY=a;
     }
 }

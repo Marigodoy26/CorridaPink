@@ -1,4 +1,5 @@
-﻿namespace CorridaPink;
+﻿
+namespace CorridaPink;
 
 public partial class MainPage : ContentPage
 {
@@ -21,6 +22,7 @@ public partial class MainPage : ContentPage
 	const int maxTempoPulando = 6;
 	const int maxTemponoAr = 4;
 	Player player;
+	Inimigos inimigos;
 
 
 	public MainPage()
@@ -82,18 +84,18 @@ public partial class MainPage : ContentPage
 	void GerenciaCenario(HorizontalStackLayout HSL)
 	{
 		var view = (HSL.Children.First() as Image);
-		if (view.WidthRequest + HSL.TranslationX < 0)
-		{
-			HSL.Children.RemoveAt(view);
-			HSL.Children.Add(view);
-			HSL.TranslationX = view.TranslationX;
-		}
+		if(view.WidthRequest + HSL.TranslationX < 0)
+			{
+				HSL.Children.Remove(view);
+				HSL.Children.Add(view);
+				HSL.TranslationX = view.TranslationX;
+			}
 	}
 
 	void AplicaGravidade()
 	{
 		if (player.GetY() < 0)
-			player.moveY(ForcaGravidade);
+			player.MoveY(ForcaGravidade);
 		else if (player.GetY() >= 0)
 		{
 			player.SetY(0);
@@ -103,23 +105,31 @@ public partial class MainPage : ContentPage
 
 	async Task Desenha()
 	{
-		while (!EstaMorto)
+		while(!EstaMorto)
 		{
 			GerenciaCenarios();
-			Player Desenha();
-			await Task.Delay(TempoEntreFrames);
-			if (!EstaPulando && !EstanoAr)
+
+			if(inimigos!= null)
+				inimigos.Desenha(velocidade);
+
+			if(!EstaPulando && !EstanoAr)
 			{
 				AplicaGravidade();
 				player.Desenha();
+				await Task.Delay(TempoEntreFrames);
 			}
-			else
-				AplicaPulo();
-			await Task.Delay(TempoEntreFrames);
+		 else 
+		 AplicaPulo();
+		 
 		}
 	}
 
-	protected override void OnAppearing()
+    private void GerenciaCenario()
+    {
+        throw new NotImplementedException();
+    }
+
+    protected override void OnAppearing()
 	{
 		base.OnAppearing();
 		Desenha();
@@ -141,7 +151,7 @@ public partial class MainPage : ContentPage
 			TempoPulando = 0;
 			TemponoAr = 0;
 		}
-		else if (EstaPulando && TempoPulando < maxTemponoPulando)
+		else if (EstaPulando && TempoPulando < maxTempoPulando)
 		{
 			player.MoveY(-ForcaPulo);
 			TempoPulando++;

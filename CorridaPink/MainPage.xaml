@@ -5,6 +5,9 @@
              xmlns:ff="clr-namespace:FFImageLoading.Maui;assembly=FFImageLoading.Maui">
 
   <Grid>
+  <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnGridTapped"/>
+        </Grid.GestureRecognizers>
     <HorizontalStackLayout x:Name="HSLayer1">
       <Image Source="fundo.png"
              Margin="0"
@@ -73,8 +76,24 @@
 
        <ff:CachedImageView x:Name="menina"
        Source="menina.png"
-       CachedType="All"
-       CachedDuration="360"/>
+       CacheType ="All"
+       CacheDuration="365"/>
+
+     <Image  Source="neycaido.png"
+                x:Name="imginimigo1"
+                Margin="0,0,0,110"
+                Aspect="Fill"
+                HorizontalOptions="Fill"
+                VerticalOptions="End"
+                HeightRequest="125"/>
+
+        <Image  Source="fantasma.png"
+                x:Name="imginimigo2"
+                Margin="0,0,0,110"
+                Aspect="Fill"
+                HorizontalOptions="Fill"
+                VerticalOptions="End"
+                HeightRequest="125"/>
 
   </Grid>
 

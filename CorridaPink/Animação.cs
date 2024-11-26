@@ -12,12 +12,12 @@ public partial class Animação
     bool parado = true;
     int FrameAtual=1;
     protected int AnimacaoAtiva = 1;
-    protected CachedImageView compImage;
-#pragma warning disable IDE0290 // Use primary constructor
+    protected CachedImageView imageView;
+
     public Animação(CachedImageView a)
-#pragma warning restore IDE0290 // Use primary constructor
+
     {
-        compImage = a;
+        imageView = a;
     }
 
     public void Stop()
@@ -30,7 +30,7 @@ public partial class Animação
     }
     public void SetAnimacaoAtiva(int a)
     {
-        SetAnimacaoAtiva=a;
+        AnimacaoAtiva=a;
     }
 
     public void Desenha()
@@ -54,7 +54,7 @@ public partial class Animação
             NomeArquivo = animacao3[FrameAtual];
             TamanhoAnimacao = animacao3.Count;
         }
-        compImage.Source = ImageSource.FromFile(NomeArquivo);
+        imageView.Source = ImageSource.FromFile(NomeArquivo);
         FrameAtual++;
         if (FrameAtual >= TamanhoAnimacao)
         {
